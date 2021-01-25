@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+
+}
+
+group 'com.sigsauer'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.telegram:telegrambots-spring-boot-starter:5.0.1'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.jsoup:jsoup:1.11.3'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
